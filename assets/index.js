@@ -1,13 +1,13 @@
-fetch("http://www.themealdb.com/api/json/v1/1/categories.php")
-.then((response) => response.json())
-.then(data => {
-    console.log(data.results);
-    const meals = data.results
-    return meals.map((result) => {
-        const img = document.querySelector('#pokemon-image')
-        img.src = pokemonData.sprites.front_default
-      
-        const name = document.querySelector('#pokemon-name')
-        name.textContent = pokemonData.name 
-    })
-})
+// Add event listener to DOM
+const submit = document.getElementById('btn');
+submit.addEventListener('click', function(event){
+    event.preventDefault()
+    let meal = {
+        mealName : event.target.mealName.value,
+        mealImage : event.target.image_url.value,
+        mealDescription : event.target.mealDescription.value
+    }
+    listDishes(meal)
+    orderDish(meal)
+});
+
