@@ -34,3 +34,15 @@ function allRecipes(){
     .then(recipeList => recipeList.forEach(recipe => listDishes(recipe)))
  };
  
+ // POST Request - Adding a meal
+function orderDish(meal){
+    fetch('http://localhost:3000/categories', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(meal)
+    })
+    .then(resp => resp.json())
+    .then(recipe => console.log(recipe))
+ };
