@@ -11,3 +11,16 @@ submit.addEventListener('click', function(event){
     orderDish(meal)
 });
 
+// DOM Functions
+function listDishes(recipe){
+    let meal = document.createElement('li')
+    meal.id = 'meal'
+    meal.innerHTML = `
+     <div class = mealTime>
+    
+       <h3>${recipe.mealName}</h3>
+       <img src = '${recipe.mealImage}'>
+       <p>${recipe.mealDescription}</p>
+      
+     </div>`
+ 
