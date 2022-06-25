@@ -23,4 +23,7 @@ function listDishes(recipe){
        <p>${recipe.mealDescription}</p>
       
      </div>`
- 
+     //Append it to the DOM
+   document.getElementById('menuList').appendChild(meal)
+}
+
