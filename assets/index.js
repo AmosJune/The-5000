@@ -27,3 +27,10 @@ function listDishes(recipe){
    document.getElementById('menuList').appendChild(meal)
 }
 
+//Fetch request
+function allRecipes(){
+    fetch("http://localhost:3000/categories")
+    .then((resp) => resp.json())
+    .then(recipeList => recipeList.forEach(recipe => listDishes(recipe)))
+ };
+ 
