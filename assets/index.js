@@ -46,3 +46,9 @@ function orderDish(meal){
     .then(resp => resp.json())
     .then(recipe => console.log(recipe))
  };
+
+ // After fetch, render data to DOM
+function init(){
+    allRecipes()
+ };
+ init();
