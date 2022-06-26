@@ -1,3 +1,74 @@
-/* *{
-    background-image: "https://ak.picdn.net/shutterstock/videos/1013985758/thumb/1.jpg";
-} */
+body{
+    background-image: url('https://www.colorhexa.com/cae2ff.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+p{
+    color: black;
+    font-family: 'Quicksand', sans-serif; 
+    border: 1px solid rebeccapurple;
+    font-size: 30px;
+}
+body{
+    padding: 20px
+};
+
+ul{
+    list-style: none; 
+    padding: 10px;
+    margin: 0;
+    border: 1px solid red;
+}
+
+input{
+    padding: 5px;
+    width: 30em;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 20px;
+}
+input#btn{
+    background-color: black;
+    color: orange;
+    width: 10em;
+    margin-left: 50px;
+    height: 40px;
+    cursor: pointer;
+}
+input#btn:active {
+    background-color: greenyellow;
+}
+input#btn:hover {
+    background-color: orange;
+    color: black;
+    transition-duration: 0.4s;
+}
+h1{
+    font-size: 40px;
+    padding: 0;
+}
+span{
+    color: orange;
+}
+h3{
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 20px;
+    color: orange;
+}
+#menuList{
+    padding: 10px 350px;
+    width: 50%;
+    justify-content: center;
+}
+ul#menuList{
+    list-style-type: none;
+}
+label{
+    font-size: 28px;
+}
+.search{
+    padding-left: 15%;
+    padding-bottom: 20px;
+}
