@@ -3,18 +3,19 @@ const submit = document.getElementById('btn');
 submit.addEventListener('click', function(event){
     event.preventDefault()
     let meal = {
-        mealName : event.target.strCategory.value,
-        mealImage : event.target.strCategoryThumb_url.value,
-        mealDescription : event.target.strCategoryDescription.value
+        mealName : event.target.name.value,
+        mealImage : event.target.image_url.value,
+        mealDescription : event.target.description.value
     }
     listDishes(meal)
     orderDish(meal)
 });
 
-// const search = document.getElementsByTagName('form')
-// document.addEventListener('DOMContentLoaded', event => {
-//     allRecipes()
-// })
+// Search for a meal 
+const search = document.getElementsByTagName('form')
+document.addEventListener('DOMContentLoaded', event => {
+    allRecipes()
+})
 
 
 // DOM Functions
@@ -27,7 +28,6 @@ function listDishes(recipe){
        <h3>${recipe.mealName}</h3>
        <img src = '${recipe.mealImage}'>
        <p>${recipe.mealDescription}</p>
-      
      </div>`
 //Append it to the DOM
    document.getElementById('menuList').appendChild(meal)
@@ -35,17 +35,17 @@ function listDishes(recipe){
 
 //Fetch request
 function allRecipes(){
-    fetch('http://www.themealdb.com/api/json/v1/1/categories.php')
+    fetch('http://localhost:3000/categories')
     .then((resp) => resp.json())
     .then(recipeList => recipeList.forEach(recipe => listDishes(recipe)))
-    .catch(e => {
-        console.log(e);
-    })
+    // .catch(e => {
+    //     console.log(e);
+    // })
  };
  
  // POST Request - Adding a meal
 function orderDish(meal){
-    fetch('http://www.themealdb.com/api/json/v1/1/categories.php', {
+    fetch('http://localhost:3000/categories', {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
@@ -63,7 +63,7 @@ function init(){
  init();
 
  function findMeal(searchMeal) {
-     fetch(`http://www.themealdb.com/api/json/v1/1/categories/${searchMeal.toLowerCase()}.php`)
+     fetch(`http://localhost:3000/categories${searchMeal.toLowerCase()}`)
      .then(resp => resp.json())
      .then(data => {
          listDishes(data.recipe)})
