@@ -9,7 +9,6 @@
 
  - [Description](#description)
  - [Features](#features)
- - [Behaviour Driven Development](#Behaviour-Driven-Development)
  - [Requirements](#requirements)
  - [Installation Process](#installation-Process)
  - [Live Link](#Live-Link)
@@ -18,45 +17,34 @@
  - [Authors Info](#Authors-Info)
 
  ## Description 
- <p>The 5000 project is a web application that 
- </p>
+ This project is a web application for The 5000 hotel that shows details about the services it offers, has information about the meals prepared in the hotel.
+[Go Back to the top](#the-5000)
 
+## Features
+As a user of the application,you will be able to :
+1. See the list of the meals provided in the hotel
+[Go Back to the top](#the-5000)
 
+ ###  Requirements
+ * Access to  a computer or any other garget
+ * Access to internet
 
+ ### Installation Process
+ ****
+* Clone the repo : git clone https://github.com/AmosJune/The-5000.git
+* Unzip the downloaded files in a folder of choice.
+* Open the index file from the zipped file with any browser.
+ ****
+[Go Back to the top](#the-5000)
 
+### Live Link
+- Click this link to view the live application 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Technology  Used
+* HTML - for developing the structure of the pages.
+* CSS - which was used to style the User Interface.
+* JS - which was used for DOM(Document Object Manipulation) scripts.
+[Go Back to the top](#the-5000)
 
 ## License
 
