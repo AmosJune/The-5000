@@ -3,9 +3,8 @@
 ## By Amos June
 
 ## Screenshot
-
-
-## Table of Content
+![Screenshot](Screenshot1.png)
+ 
 
  - [Description](#description)
  - [Features](#features)
