@@ -8,7 +8,6 @@ body{
 p{
     color: black;
     font-family: 'Quicksand', sans-serif; 
-    border: 1px solid rebeccapurple;
     font-size: 30px;
 }
 body{
@@ -30,7 +29,7 @@ input{
     font-size: 20px;
 }
 input#btn{
-    background-color: black;
+    background-color: rgb(21,14,6);
     color: orange;
     width: 10em;
     margin-left: 50px;
@@ -54,11 +53,12 @@ span{
 }
 h3{
     font-family: 'Quicksand', sans-serif; 
-    font-size: 20px;
-    color: orange;
+    font-size: 30px;
+    color: rgb(251,113,69);
+    
 }
 #menuList{
-    padding: 10px 350px;
+    padding: 10px 250px;
     width: 50%;
     justify-content: center;
 }
@@ -71,4 +71,16 @@ label{
 .search{
     padding-left: 15%;
     padding-bottom: 20px;
+}
+.mealTime{
+    display: flex;
+}
+img{
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding: 70px;
+}
+.mealTime, p{
+    width: 130%;
 }
