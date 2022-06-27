@@ -3,10 +3,10 @@ const submit = document.getElementById('btn');
 submit.addEventListener('click', function(event){
     event.preventDefault()
     let meal = {
-        mealName : event.target.name.value,
-        mealImage : event.target.image_url.value,
-        mealDescription : event.target.description.value
-    }
+        name:event.target.strCategory.value,
+        image:event.target.strCategoryThumb.src,
+        description:event.target.strCategoryDescription.value
+    };
     listDishes(meal)
     orderDish(meal)
 });
@@ -15,6 +15,12 @@ submit.addEventListener('click', function(event){
 const search = document.getElementsByTagName('form')
 document.addEventListener('DOMContentLoaded', event => {
     allRecipes()
+let findMeal = function findMeal(searchMeal) {
+        fetch(`http://localhost:3000/categories${searchMeal.toLowerCase()}`)
+        .then(resp => resp.json())
+        .then(data => {
+            listDishes(data.recipe)})
+    }
 })
 
 
@@ -25,9 +31,9 @@ function listDishes(recipe){
     meal.innerHTML = `
      <div class = mealTime>
     
-       <h3>${recipe.mealName}</h3>
-       <img src = '${recipe.mealImage}'>
-       <p>${recipe.mealDescription}</p>
+       <h3>${recipe.strCategory}</h3>
+       <img src = '${recipe.strCategoryThumb}'>
+       <p>${recipe.strCategoryDescription}</p>
      </div>`
 //Append it to the DOM
    document.getElementById('menuList').appendChild(meal)
@@ -38,9 +44,9 @@ function allRecipes(){
     fetch('http://localhost:3000/categories')
     .then((resp) => resp.json())
     .then(recipeList => recipeList.forEach(recipe => listDishes(recipe)))
-    // .catch(e => {
-    //     console.log(e);
-    // })
+    .catch(e => {
+        console.log(e);
+    })
  };
  
  // POST Request - Adding a meal
@@ -57,14 +63,15 @@ function orderDish(meal){
  };
 
  // After fetch, render data to DOM
-function init(){
-    allRecipes()
- };
- init();
+// function init(){
+//     allRecipes()
+//  };
+//  init();
 
- function findMeal(searchMeal) {
-     fetch(`http://localhost:3000/categories${searchMeal.toLowerCase()}`)
-     .then(resp => resp.json())
-     .then(data => {
-         listDishes(data.recipe)})
- }
+ //Search for an individual meal
+//  function findMeal(searchMeal) {
+//      fetch(`http://localhost:3000/categories${searchMeal.toLowerCase()}`)
+//      .then(resp => resp.json())
+//      .then(data => {
+//          listDishes(data.recipe)})
+//  }
